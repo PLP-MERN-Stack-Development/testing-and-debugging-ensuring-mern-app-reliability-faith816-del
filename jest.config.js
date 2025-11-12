@@ -7,13 +7,13 @@ module.exports = {
     {
       displayName: 'server',
       testEnvironment: 'node',
-      testMatch: ['<rootDir>/server/tests/**/*.test.js'],
+      testMatch: ['<rootDir>/mern-bug-tracker/server/tests/**/*.test.js'],
       moduleFileExtensions: ['js', 'json', 'node'],
-      setupFilesAfterEnv: ['<rootDir>/server/tests/setup.js'],
+      setupFilesAfterEnv: ['<rootDir>/mern-bug-tracker/server/tests/setup.js'],
       coverageDirectory: '<rootDir>/coverage/server',
       collectCoverageFrom: [
-        'server/src/**/*.js',
-        '!server/src/config/**',
+        'mern-bug-tracker/server/src/**/*.js',
+        '!mern-bug-tracker/server/src/config/**',
         '!**/node_modules/**',
       ],
     },
@@ -22,20 +22,20 @@ module.exports = {
     {
       displayName: 'client',
       testEnvironment: 'jsdom',
-      testMatch: ['<rootDir>/client/src/**/*.test.{js,jsx}'],
+      testMatch: ['<rootDir>/mern-bug-tracker/client/src/**/*.test.{js,jsx}'],
       moduleFileExtensions: ['js', 'jsx', 'json'],
       moduleNameMapper: {
         '\\.(css|less|scss|sass)$': 'identity-obj-proxy',
-        '\\.(jpg|jpeg|png|gif|webp|svg)$': '<rootDir>/client/src/tests/__mocks__/fileMock.js',
+        '\\.(jpg|jpeg|png|gif|webp|svg)$': '<rootDir>/mern-bug-tracker/client/src/tests/__mocks__/fileMock.js',
       },
-      setupFilesAfterEnv: ['<rootDir>/client/src/tests/setup.js'],
+      setupFilesAfterEnv: ['<rootDir>/mern-bug-tracker/client/src/tests/setup.js'],
       transform: {
         '^.+\\.(js|jsx)$': 'babel-jest',
       },
       coverageDirectory: '<rootDir>/coverage/client',
       collectCoverageFrom: [
-        'client/src/**/*.{js,jsx}',
-        '!client/src/index.js',
+        'mern-bug-tracker/client/src/**/*.{js,jsx}',
+        '!mern-bug-tracker/client/src/main.jsx',
         '!**/node_modules/**',
       ],
     },

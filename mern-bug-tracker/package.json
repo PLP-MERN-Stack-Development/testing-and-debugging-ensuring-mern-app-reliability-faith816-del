@@ -1,0 +1,25 @@
+{
+  "name": "mern-bug-tracker",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Comprehensive MERN bug tracker with testing and debugging workflows",
+  "workspaces": [
+    "server",
+    "client"
+  ],
+  "scripts": {
+    "install:all": "npm install --workspaces",
+    "dev": "concurrently \"npm run dev --workspace server\" \"npm run dev --workspace client\"",
+    "start": "npm run start --workspace server",
+    "test": "npm run test --workspaces",
+    "test:coverage": "npm run test:coverage --workspace server && npm run test:coverage --workspace client",
+    "test:server": "npm run test --workspace server",
+    "test:client": "npm run test --workspace client",
+    "lint": "echo \"Run ESLint within client/ and server/ workspaces\"",
+    "clean": "rimraf ./coverage ./server/coverage ./client/coverage"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "rimraf": "^5.0.10"
+  }
+}
